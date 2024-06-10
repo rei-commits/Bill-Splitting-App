@@ -21,6 +21,12 @@ domcument.addEventListener('DOMContentLoaded', () => {
         const totalAmount = billAmount + tipAmount
         const amountPerPerson = totalAmount / numPeople
 
+        // Debugging values
+        console.log('Tip Amount:', tipAmount)
+        console.log('Total Amount:', totalAmount)
+        console.log('Amount per person:', amountPerPerson)
+
+
         resultDiv.textContent = `Total Amount: $${totalAmount.toFixed(2)}
         Tip Amount: $${tipAmount.toFixed(2)}
         Each Person Owes: $${amountPerPerson.toFixed(2)}`;
