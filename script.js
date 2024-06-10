@@ -1,11 +1,32 @@
-domcument.addEventListener('DOMContentLoaded', () => {
-    const billAmountInput = document.getElementById('billAmount')
-    const numPeopleInput = document.getElementById('numPeople')
-    const tipPercentageInput = document.getElementById('tipPercentage')
-    const calculateBtn = document.getElementById('calculateBtn')
-    const resultDiv = document.getElementById('result')
+document.addEventListener('DOMContentLoaded', () => {
+    //cache one element using getElementById
+    const container = document.getElementById('container')
+    // Cache at least one element using querySelector
+    const billAmountInput = document.querySelector('#billAmount')
+    const numPeopleInput = document.querySelector('#numPeople')
+    const tipPercentageInput = document.querySelector('#tipPercentage')
+    const calculateBtn = document.querySelector('#calculateBtn')
+    const resultDiv = document.querySelector('#result')
 
+    // Event Listeners
     calculateBtn.addEventListener('click', calculateBill)
+    billAmountInput.addEventListener('input', validateInputs)
+
+    // Iterate over a collection of elements to accomplish some task
+    const inputElements = document.querySelectorAll('input')
+    inputElements.forEach(input => {
+        input.addEventListener('focus', () => input.style.backgroundColor = '#e0f7fa')
+        input.addEventListener('blur', () => input.style.backgroundColor = '#ffffff')
+    });
+
+    function validateInputs() {
+        // Include at least one form and/or input with DOM event-based validation
+        if (billAmountInput.value < 0) {
+            billAmountInput.setCustomValidity("Bill amount cannot be negative")
+        } else {
+            billAmountInput.setCustomValidity("")
+        }
+    }
 
     function calculateBill() {
         const billAmount = parseFloat(billAmountInput.value)
@@ -21,14 +42,23 @@ domcument.addEventListener('DOMContentLoaded', () => {
         const totalAmount = billAmount + tipAmount
         const amountPerPerson = totalAmount / numPeople
 
-        // Debugging values
-        console.log('Tip Amount:', tipAmount)
-        console.log('Total Amount:', totalAmount)
-        console.log('Amount per person:', amountPerPerson)
+        resultDiv.innerHTML = `Total Amount: $${totalAmount.toFixed(2)}<br>
+        Tip Amount: $${tipAmount.toFixed(2)}<br>
+        Each Person Owes: $${amountPerPerson.toFixed(2)}`
 
+        resultDiv.style.color = 'green'
 
-        resultDiv.textContent = `Total Amount: $${totalAmount.toFixed(2)}
-        Tip Amount: $${tipAmount.toFixed(2)}
-        Each Person Owes: $${amountPerPerson.toFixed(2)}`;
+        console.log('Calculation done')
     }
-});
+    // Create at least one element using createElement and appendChild
+    const footer = document.createElement('footer')
+    footer.textContent = 'Tip: Always check your bill carefully!'
+    container.appendChild(footer)
+
+    // Use DocumentFragment to add templated content
+    const fragment = document.createDocumentFragment()
+    const template = document.createElement('div')
+    template.innerHTML = `<p style="color: blue;">This is a templated message!</p>`
+    fragment.appendChild(template)
+    container.appendChild(fragment)
+})

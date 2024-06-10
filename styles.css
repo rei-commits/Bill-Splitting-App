@@ -24,18 +24,15 @@ h1 {
 .input-group {
     margin-bottom: 15px;
 }
-.input-group label i {
-    margin-right: 8px;
-    color: #5cb85c;
-}
-
-button i {
-    margin-right: 8px;
-}
 
 label {
     display: block;
     margin-bottom: 5px;
+}
+
+label i {
+    margin-right: 8px;
+    color: #5cb85c;
 }
 
 input {
@@ -56,6 +53,9 @@ button {
     margin-top: 10px;
 }
 
+button i {
+    margin-right: 8px;
+}
 button:hover {
     background: #4cae4c;
 }

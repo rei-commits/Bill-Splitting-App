@@ -8,19 +8,19 @@
     <script src="https://kit.fontawesome.com/9a98403995.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="container">
     <h1>Bill Splitter</h1>
     <div class="input-group">
         <label for="billAmount"><i class="fas fa-users"></i> Total Bill Amount ($):</label>
-        <input type="number" id="billAmount"  placeholder="Enter total bill amount" min="0" required>
+        <input type="number" id="billAmount"  placeholder="Enter total bill amount"  required>
         </div>
         <div class="input-group">
             <label for="numPeople"><i class="fas fa-users"></i>Number of People:</label>
-            <input type="number" id="numPeople"  placeholder="Enter number of people"
+            <input type="number" id="numPeople"  placeholder="Enter number of people" required
         </div>
         <div class="input-group">
             <label for="tipPercentage"><i class="fas fa-percentage"></i>Tip Percentage (%):</label>
-            <input type="number" id="tipPercentage"  placeholder="Enter tip percentage" min="0" required>
+            <input type="number" id="tipPercentage"  placeholder="Enter tip percentage" required>
         </div>
         <button id="calculateBtn"><i class="fas fa-calculator"></i>Calculate</button>
         <div class="result" id="result"></div>
