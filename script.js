@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
     calculateBtn.addEventListener('click', calculateBill)
     billAmountInput.addEventListener('input', validateInputs)
 
+    // Reset button
+    const resetBtn = document.getElementById('resetBtn');
+    resetBtn.addEventListener('click', resetForm);
+
     // Iterate over a collection of elements to accomplish some task
     const inputElements = document.querySelectorAll('input')
     inputElements.forEach(input => {
@@ -50,6 +54,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         console.log('Calculation done')
     }
+
+    function resetForm() {
+        // Clear input fields
+        billAmountInput.value = '';
+        numPeopleInput.value = '';
+        tipPercentageInput.value = '';
+
+        // Clear result display
+        resultDiv.innerHTML = '';
+    }
+
     // Create at least one element using createElement and appendChild
     const footer = document.createElement('footer')
     footer.textContent = 'Tip: Always check your bill carefully!'
