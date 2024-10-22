@@ -6,6 +6,8 @@ body {
     align-items: center;
     margin: 0;
     height: 100vh;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .container {
@@ -15,6 +17,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
     text-align: center;
+
 }
 
 h1 {
@@ -64,3 +67,4 @@ button:hover {
     margin-top: 20px;
     font-size: 1.2em;
 }
+
