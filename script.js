@@ -1,4 +1,4 @@
-import { handleCalculateBtnClick, handleResetBtnClick } from './scripts/eventHandlers.js';
+import { handleCalculateBtnClick, handleResetBtnClick } from './modules/eventHandlers.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const billAmountInput = document.querySelector('#billAmount');
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const calculateBtn = document.querySelector('#calculateBtn');
     const resetBtn = document.querySelector('#resetBtn');
     const resultDiv = document.querySelector('#result');
-    
+
     // Event Listeners
     calculateBtn.addEventListener('click', () => handleCalculateBtnClick(billAmountInput, numPeopleInput, tipPercentageInput, resultDiv));
     resetBtn.addEventListener('click', () => handleResetBtnClick([billAmountInput, numPeopleInput, tipPercentageInput], resultDiv));
